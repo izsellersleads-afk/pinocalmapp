@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PINO Calm — Bilingual Emotional-Intelligence Tools for Little Kids</title>
+  <meta name="description" content="Bilingual calm cards, scripts, and tools to help parents guide little kids through big feelings. Summer Reset Bundle available now."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --cream:       #F5EFE4;
+      --cream-dark:  #EDE4D3;
+      --teal:        #6BAAAA;
+      --teal-light:  #B8D8D8;
+      --teal-dark:   #3D8080;
+      --olive:       #9C8B6E;
+      --olive-light: #C4AA88;
+      --brown:       #7A6A52;
+      --brown-dark:  #4A3728;
+      --gold:        #C4963A;
+      --white:       #FDFAF5;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: var(--cream);
+      color: var(--brown-dark);
+      overflow-x: hidden;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      background: var(--teal-light);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 3rem 1.5rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      bottom: -2px; left: 0; right: 0;
+      height: 80px;
+      background: var(--cream);
+      clip-path: ellipse(55% 100% at 50% 100%);
+    }
+
+    .hero-logo {
+      width: min(220px, 55vw);
+      margin-bottom: 1.5rem;
+      animation: floatUp 0.8s ease both;
+      filter: drop-shadow(0 8px 24px rgba(0,0,0,0.10));
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: var(--gold);
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.35rem 1.1rem;
+      border-radius: 100px;
+      margin-bottom: 1.2rem;
+      animation: floatUp 0.8s 0.1s ease both;
+    }
+
+    .hero h1 {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 900;
+      font-size: clamp(2rem, 7vw, 3.6rem);
+      color: var(--brown-dark);
+      line-height: 1.15;
+      margin-bottom: 1rem;
+      animation: floatUp 0.8s 0.2s ease both;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: var(--teal-dark);
+    }
+
+    .hero-sub {
+      font-family: 'Lora', serif;
+      font-style: italic;
+      font-size: clamp(1rem, 3vw, 1.2rem);
+      color: var(--brown);
+      max-width: 480px;
+      margin: 0 auto 2.2rem;
+      line-height: 1.6;
+      animation: floatUp 0.8s 0.3s ease both;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      align-items: center;
+      animation: floatUp 0.8s 0.4s ease both;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: var(--teal-dark);
+      color: #fff;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      font-size: 1.05rem;
+      padding: 0.95rem 2.4rem;
+      border-radius: 100px;
+      text-decoration: none;
+      box-shadow: 0 4px 20px rgba(61,128,128,0.35);
+      transition: transform 0.18s, box-shadow 0.18s;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(61,128,128,0.4); }
+
+    .btn-secondary {
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--brown);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      cursor: pointer;
+      background: none; border: none;
+    }
+
+    .price-tag {
+      font-weight: 900;
+      font-size: 1.1rem;
+      color: var(--gold);
+    }
+    .price-old {
+      text-decoration: line-through;
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: var(--brown);
+      opacity: 0.7;
+      margin-left: 0.3rem;
+    }
+
+    /* ── TRUST BAR ── */
+    .trust-bar {
+      background: var(--brown-dark);
+      color: var(--teal-light);
+      text-align: center;
+      padding: 0.85rem 1rem;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+    }
+
+    /* ── SECTION SHARED ── */
+    section { padding: 5rem 1.5rem; }
+
+    .section-label {
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--teal-dark);
+      margin-bottom: 0.6rem;
+    }
+
+    h2 {
+      font-weight: 900;
+      font-size: clamp(1.6rem, 5vw, 2.4rem);
+      color: var(--brown-dark);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .container { max-width: 680px; margin: 0 auto; }
+    .container-wide { max-width: 900px; margin: 0 auto; }
+
+    /* ── PROBLEM SECTION ── */
+    .problem {
+      background: var(--cream-dark);
+      text-align: center;
+    }
+
+    .problem p {
+      font-family: 'Lora', serif;
+      font-size: clamp(1.05rem, 3.5vw, 1.25rem);
+      line-height: 1.75;
+      color: var(--brown);
+      max-width: 560px;
+      margin: 0 auto 1.5rem;
+    }
+
+    .problem-highlight {
+      background: var(--white);
+      border-left: 4px solid var(--teal);
+      border-radius: 0 12px 12px 0;
+      padding: 1.1rem 1.4rem;
+      font-family: 'Lora', serif;
+      font-style: italic;
+      font-size: 1.1rem;
+      color: var(--brown-dark);
+      max-width: 520px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    /* ── WHAT'S INSIDE ── */
+    .inside { background: var(--cream); text-align: center; }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 2.5rem;
+    }
+
+    .card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 1.4rem 1.2rem;
+      text-align: left;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      transition: transform 0.18s;
+      position: relative;
+    }
+    .card:hover { transform: translateY(-3px); }
+
+    .card-num {
+      width: 32px; height: 32px;
+      background: var(--teal-light);
+      color: var(--teal-dark);
+      font-weight: 900;
+      font-size: 0.85rem;
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 0.8rem;
+    }
+
+    .card-bonus .card-num { background: var(--gold); color: #fff; }
+
+    .card h3 {
+      font-weight: 800;
+      font-size: 0.95rem;
+      color: var(--brown-dark);
+      margin-bottom: 0.3rem;
+    }
+
+    .card p {
+      font-size: 0.85rem;
+      color: var(--brown);
+      line-height: 1.5;
+    }
+
+    .bonus-tag {
+      position: absolute;
+      top: 0.75rem; right: 0.75rem;
+      background: var(--gold);
+      color: #fff;
+      font-size: 0.62rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      padding: 0.2rem 0.55rem;
+      border-radius: 100px;
+      text-transform: uppercase;
+    }
+
+    /* ── HOW IT WORKS ── */
+    .how { background: var(--teal-light); text-align: center; }
+
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      margin-top: 2.5rem;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .step {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      background: var(--white);
+      border-radius: 14px;
+      padding: 1.2rem 1.4rem;
+      text-align: left;
+    }
+
+    .step-num {
+      min-width: 36px; height: 36px;
+      background: var(--teal-dark);
+      color: #fff;
+      font-weight: 900;
+      font-size: 1rem;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .step h3 { font-weight: 800; font-size: 0.95rem; margin-bottom: 0.2rem; }
+    .step p { font-size: 0.85rem; color: var(--brown); line-height: 1.5; }
+
+    /* ── QUOTE ── */
+    .quote-section {
+      background: var(--brown-dark);
+      text-align: center;
+      padding: 4rem 1.5rem;
+    }
+
+    .quote-section blockquote {
+      font-family: 'Lora', serif;
+      font-style: italic;
+      font-size: clamp(1.1rem, 4vw, 1.5rem);
+      color: var(--teal-light);
+      max-width: 560px;
+      margin: 0 auto 1rem;
+      line-height: 1.65;
+    }
+
+    .quote-section cite {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--olive-light);
+      letter-spacing: 0.06em;
+    }
+
+    /* ── BUY SECTION ── */
+    .buy {
+      background: var(--cream);
+      text-align: center;
+    }
+
+    .buy-box {
+      background: var(--white);
+      border-radius: 24px;
+      padding: 2.5rem 2rem;
+      max-width: 480px;
+      margin: 2rem auto 0;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.09);
+    }
+
+    .buy-box h3 {
+      font-size: 1.4rem;
+      font-weight: 900;
+      margin-bottom: 0.3rem;
+    }
+
+    .buy-box .tagline {
+      font-family: 'Lora', serif;
+      font-style: italic;
+      font-size: 0.95rem;
+      color: var(--brown);
+      margin-bottom: 1.5rem;
+    }
+
+    .buy-includes {
+      list-style: none;
+      text-align: left;
+      margin-bottom: 1.8rem;
+    }
+
+    .buy-includes li {
+      font-size: 0.9rem;
+      color: var(--brown-dark);
+      padding: 0.4rem 0;
+      border-bottom: 1px solid var(--cream-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .buy-includes li::before {
+      content: '✓';
+      color: var(--teal-dark);
+      font-weight: 900;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+    }
+
+    .price-display {
+      margin-bottom: 1.4rem;
+    }
+
+    .price-display .current {
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: var(--teal-dark);
+    }
+
+    .price-display .regular {
+      font-size: 0.85rem;
+      color: var(--brown);
+      text-decoration: line-through;
+      opacity: 0.65;
+      margin-left: 0.4rem;
+    }
+
+    .price-display .founding {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-top: 0.2rem;
+    }
+
+    .btn-buy {
+      display: block;
+      width: 100%;
+      background: var(--teal-dark);
+      color: #fff;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 900;
+      font-size: 1.1rem;
+      padding: 1.05rem;
+      border-radius: 100px;
+      text-decoration: none;
+      box-shadow: 0 4px 20px rgba(61,128,128,0.3);
+      transition: transform 0.18s, box-shadow 0.18s;
+      border: none; cursor: pointer;
+    }
+    .btn-buy:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(61,128,128,0.4); }
+
+    .guarantee {
+      font-size: 0.78rem;
+      color: var(--brown);
+      margin-top: 0.9rem;
+    }
+
+    /* ── FREE LEAD MAGNET ── */
+    .free-section {
+      background: var(--teal-dark);
+      padding: 4rem 1.5rem;
+      text-align: center;
+    }
+
+    .free-section h2 { color: var(--white); }
+    .free-section p {
+      color: var(--teal-light);
+      font-size: 1rem;
+      margin: 0.8rem auto 1.8rem;
+      max-width: 420px;
+      line-height: 1.6;
+    }
+
+    .email-form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+      max-width: 380px;
+      margin: 0 auto;
+    }
+
+    .email-form input {
+      font-family: 'Nunito', sans-serif;
+      font-size: 1rem;
+      padding: 0.9rem 1.2rem;
+      border-radius: 100px;
+      border: none;
+      outline: none;
+      background: var(--white);
+      color: var(--brown-dark);
+    }
+
+    .btn-free {
+      background: var(--gold);
+      color: #fff;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 900;
+      font-size: 1rem;
+      padding: 0.9rem;
+      border-radius: 100px;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.18s;
+    }
+    .btn-free:hover { transform: translateY(-2px); }
+
+    /* ── ABOUT ── */
+    .about {
+      background: var(--cream-dark);
+      text-align: center;
+    }
+
+    .about p {
+      font-family: 'Lora', serif;
+      font-size: 1rem;
+      color: var(--brown);
+      line-height: 1.75;
+      max-width: 520px;
+      margin: 0 auto 1rem;
+    }
+
+    .about-name {
+      font-weight: 800;
+      font-size: 0.85rem;
+      color: var(--teal-dark);
+      letter-spacing: 0.06em;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--brown-dark);
+      color: var(--olive-light);
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.8rem;
+    }
+
+    footer a { color: var(--teal-light); text-decoration: none; }
+
+    /* ── ANIMATIONS ── */
+    @keyframes floatUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 480px) {
+      .cards-grid { grid-template-columns: 1fr; }
+      .buy-box { padding: 1.8rem 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <img src="pino_logo.png" alt="PINO Calm — a friendly penguin holding a heart" class="hero-logo"/>
+  <span class="hero-badge">🌿 New — Summer Reset Bundle</span>
+  <h1>Big feelings don't have<br/>to feel <em>this hard.</em></h1>
+  <p class="hero-sub">Bilingual calm cards and scripts that help parents guide little kids through big emotions — in English and Spanish.</p>
+  <div class="hero-cta-group">
+    <a href="#buy" class="btn-primary">Get the Bundle — <span class="price-tag">$7</span><span class="price-old">$14.99</span></a>
+    <button class="btn-secondary" onclick="document.getElementById('free').scrollIntoView({behavior:'smooth'})">or get the free card first →</button>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  🐧 &nbsp; Bilingual EN/ES &nbsp;·&nbsp; Developed by an educator &nbsp;·&nbsp; Printable &nbsp;·&nbsp; Instant download
+</div>
+
+<!-- PROBLEM -->
+<section class="problem">
+  <div class="container reveal">
+    <p class="section-label">Sound familiar?</p>
+    <h2>Summer is beautiful.<br/>And also relentless.</h2>
+    <p>More time together means more big feelings — tantrums, meltdowns, "it's not fair," and the dreaded "I'm bored." Most parents weren't given the tools to handle this. PINO Calm gives you the words.</p>
+    <div class="problem-highlight">
+      "I knew I was supposed to stay calm. I just didn't know <em>what to say.</em>"
+    </div>
+  </div>
+</section>
+
+<!-- WHAT'S INSIDE -->
+<section class="inside">
+  <div class="container-wide reveal">
+    <p class="section-label">What's inside</p>
+    <h2>8 tools. One calm summer.</h2>
+    <div class="cards-grid">
+      <div class="card reveal">
+        <div class="card-num">01</div>
+        <h3>How to Use This Kit</h3>
+        <p>The 5-step parent guide for calm moments — what to say, how to say it.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-num">02</div>
+        <h3>Big Feelings Card</h3>
+        <p>Bilingual scripts + Balloon Breaths activity for tantrums and overwhelm.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-num">03</div>
+        <h3>Name the Feeling</h3>
+        <p>Help your child identify mad, sad, tired, or scared — before it escalates.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-num">04</div>
+        <h3>Safe Body Card</h3>
+        <p>Co-regulation when little bodies feel unsafe. Bilingual and parent-led.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-num">05</div>
+        <h3>Calm Corner Card</h3>
+        <p>How to use a reset space — not as punishment, but as a safe place.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-num">06</div>
+        <h3>After the Storm</h3>
+        <p>Reconnect and repair after big feelings. Connection before correction.</p>
+      </div>
+      <div class="card card-bonus reveal">
+        <span class="bonus-tag">Bonus</span>
+        <div class="card-num">07</div>
+        <h3>Calm Corner Setup</h3>
+        <p>Build your child's calm corner in minutes with this printable checklist.</p>
+      </div>
+      <div class="card card-bonus reveal">
+        <span class="bonus-tag">Bonus</span>
+        <div class="card-num">08</div>
+        <h3>Summer Feelings Tracker</h3>
+        <p>Weekly log to notice patterns, celebrate progress, and try new things.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how">
+  <div class="container reveal">
+    <p class="section-label">How it works</p>
+    <h2>In the moment,<br/>you'll know what to do.</h2>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-num">1</div>
+        <div>
+          <h3>Your child is upset</h3>
+          <p>Big feeling arrives. You reach for your Pino Calm card instead of reacting.</p>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">2</div>
+        <div>
+          <h3>Get low, speak softly</h3>
+          <p>Use the parent script on the card. Fewer words, slower voice, stay close.</p>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">3</div>
+        <div>
+          <h3>Do the activity together</h3>
+          <p>Balloon Breaths, Feeling Detective, Safe Hands Reset — one simple tool.</p>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">4</div>
+        <div>
+          <h3>Reconnect after</h3>
+          <p>Connection comes before correction. Hug first. Talk gently. Try again.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section class="quote-section">
+  <blockquote>"After a big feeling, connection comes before correction."</blockquote>
+  <cite>— PINO CALM</cite>
+</section>
+
+<!-- BUY -->
+<section class="buy" id="buy">
+  <div class="container reveal">
+    <p class="section-label">Get the bundle</p>
+    <h2>Ready to feel prepared<br/>this summer?</h2>
+    <div class="buy-box">
+      <h3>PINO Calm Summer Reset Bundle</h3>
+      <p class="tagline">8 bilingual tools for big feelings, calm corners, and summer emotional readiness</p>
+      <ul class="buy-includes">
+        <li>How to Use This Kit (parent guide)</li>
+        <li>5 Bilingual Calm Cards (EN + ES)</li>
+        <li>Calm Corner Setup Checklist</li>
+        <li>Summer Feelings Tracker</li>
+        <li>Instant PDF download — print or use on screen</li>
+      </ul>
+      <div class="price-display">
+        <span class="current">$7</span>
+        <span class="regular">$14.99</span>
+        <span class="founding">⭐ Founding parent price — limited time</span>
+      </div>
+      <a href="YOUR_GUMROAD_LINK_HERE" class="btn-buy">Download Now — $7</a>
+      <p class="guarantee">🔒 Instant download · PDF · No subscription</p>
+    </div>
+  </div>
+</section>
+
+<!-- FREE LEAD MAGNET -->
+<section class="free-section" id="free">
+  <div class="container reveal">
+    <p class="section-label" style="color:var(--teal-light)">Free resource</p>
+    <h2>Not ready to buy?<br/>Start here for free.</h2>
+    <p>Get the Big Feelings calm card — one bilingual script, one activity, one Pino Tip. Yours free, no strings.</p>
+    <form class="email-form" onsubmit="handleFreeSignup(event)">
+      <input type="email" placeholder="Your email address" required/>
+      <button type="submit" class="btn-free">Send me the free card →</button>
+    </form>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about">
+  <div class="container reveal">
+    <p class="section-label">Who made this</p>
+    <h2>Created by an educator,<br/>for real families.</h2>
+    <p>PINO Calm was created by <strong>Ileana Turner</strong>, bilingual educator and founder. These tools were built from real classroom experience with young children — and real moments at home where parents needed words and didn't have them.</p>
+    <p>Every script, activity, and tip in this kit has been tested with children ages 3–7 in bilingual settings. This is not theory. This is what actually works.</p>
+    <p class="about-name">— Ileana Turner, Founder of PINO Calm</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p style="margin-bottom:0.5rem;">
+    <strong style="color:var(--white)">PINO Calm</strong> · pinocalmapp.com
+  </p>
+  <p>Bilingual emotional-intelligence tools for little kids</p>
+  <p style="margin-top:0.5rem;opacity:0.6;">© 2026 PINO Calm · Created by Ileana Turner</p>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 60);
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach(r => observer.observe(r));
+
+  // Free signup placeholder
+  function handleFreeSignup(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('button');
+    btn.textContent = '✓ Check your inbox!';
+    btn.style.background = '#3D8080';
+    e.target.querySelector('input').value = '';
+  }
+</script>
+</body>
+</html>
