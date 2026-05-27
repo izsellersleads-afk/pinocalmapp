@@ -704,10 +704,7 @@
     <p class="section-label" style="color:var(--teal-light)">Free resource</p>
     <h2>Not ready to buy?<br/>Start here for free.</h2>
     <p>Get the Big Feelings calm card — one bilingual script, one activity, one Pino Tip. Yours free, no strings.</p>
-    <form class="email-form" onsubmit="handleFreeSignup(event)">
-      <input type="email" placeholder="Your email address" required/>
-      <button type="submit" class="btn-free">Send me the free card →</button>
-    </form>
+    <script async data-uid="79b7b99da2" src="https://pinocalmapp.kit.com/79b7b99da2/index.js"></script>
   </div>
 </section>
 
@@ -744,14 +741,7 @@
   }, { threshold: 0.12 });
   reveals.forEach(r => observer.observe(r));
 
-  // Free signup placeholder
-  function handleFreeSignup(e) {
-    e.preventDefault();
-    const btn = e.target.querySelector('button');
-    btn.textContent = '✓ Check your inbox!';
-    btn.style.background = '#3D8080';
-    e.target.querySelector('input').value = '';
-  }
+
 </script>
 </body>
 </html>
