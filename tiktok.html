@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>PINO Calm TikTok</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Playfair+Display:ital,wght@0,900;1,700&display=swap" rel="stylesheet"/>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 390px;
+    height: 844px;
+    overflow: hidden;
+    font-family: 'Nunito', sans-serif;
+    background: #1a1a1a;
+  }
+
+  .slide {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .slide.active { opacity: 1; }
+
+  /* ── SLIDE 1 — HOOK ── */
+  #s1 { background: #3D8080; }
+
+  #s1 .big-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+  }
+
+  #s1 .big-text em {
+    font-style: italic;
+    color: #B8D8D8;
+    display: block;
+    font-size: 3.2rem;
+  }
+
+  #s1 .sub {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.5;
+    max-width: 300px;
+  }
+
+  #s1 .pino {
+    width: 120px;
+    margin-bottom: 1.5rem;
+    animation: float 3s ease-in-out infinite;
+  }
+
+  /* ── SLIDE 2 — PROBLEM ── */
+  #s2 { background: #F5EFE4; }
+
+  #s2 .scene {
+    background: #fff;
+    border-radius: 24px;
+    padding: 2rem 1.8rem;
+    width: 100%;
+    max-width: 340px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.12);
+    margin-bottom: 1.5rem;
+  }
+
+  #s2 .emoji { font-size: 3rem; margin-bottom: 1rem; display: block; }
+
+  #s2 .scene-text {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #4A3728;
+    line-height: 1.3;
+  }
+
+  #s2 .scene-sub {
+    font-size: 1rem;
+    color: #9C8B6E;
+    margin-top: 0.6rem;
+    line-height: 1.4;
+  }
+
+  #s2 .label {
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #6BAAAA;
+  }
+
+  /* ── SLIDE 3 — SOLUTION ── */
+  #s3 { background: #4A3728; }
+
+  #s3 .card-preview {
+    background: #F5EFE4;
+    border-radius: 20px;
+    padding: 1.6rem;
+    width: 100%;
+    max-width: 340px;
+    margin-bottom: 1.5rem;
+    text-align: left;
+  }
+
+  #s3 .card-tag {
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #6BAAAA;
+    margin-bottom: 0.5rem;
+  }
+
+  #s3 .card-title {
+    font-size: 1.3rem;
+    font-weight: 900;
+    color: #4A3728;
+    margin-bottom: 1rem;
+  }
+
+  #s3 .script-en {
+    font-style: italic;
+    font-size: 1rem;
+    color: #5C4830;
+    line-height: 1.5;
+    margin-bottom: 0.6rem;
+    padding-left: 0.8rem;
+    border-left: 3px solid #6BAAAA;
+  }
+
+  #s3 .script-es {
+    font-size: 0.9rem;
+    color: #9C8B6E;
+    line-height: 1.5;
+    padding-left: 0.8rem;
+    border-left: 3px solid #B8D8D8;
+  }
+
+  #s3 .headline {
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: #B8D8D8;
+    line-height: 1.3;
+  }
+
+  /* ── SLIDE 4 — BILINGUAL ── */
+  #s4 { background: #B8D8D8; }
+
+  #s4 .split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
+    width: 100%;
+    max-width: 340px;
+    margin-bottom: 1.5rem;
+  }
+
+  #s4 .lang-card {
+    border-radius: 16px;
+    padding: 1.2rem;
+    text-align: center;
+  }
+
+  #s4 .lang-card.en { background: #3D8080; }
+  #s4 .lang-card.es { background: #4A3728; }
+
+  #s4 .lang-label {
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  #s4 .lang-text {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.4;
+  }
+
+  #s4 .headline {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: #4A3728;
+    line-height: 1.2;
+  }
+
+  /* ── SLIDE 5 — CTA ── */
+  #s5 { background: #3D8080; }
+
+  #s5 .pino { width: 140px; margin-bottom: 1rem; animation: float 3s ease-in-out infinite; }
+
+  #s5 .cta-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+
+  #s5 .cta-sub {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+  }
+
+  #s5 .btn {
+    background: #C4963A;
+    color: #fff;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 900;
+    font-size: 1.1rem;
+    padding: 0.9rem 2.4rem;
+    border-radius: 100px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 6px 24px rgba(196,150,58,0.5);
+  }
+
+  #s5 .url {
+    margin-top: 0.8rem;
+    font-size: 0.9rem;
+    color: #B8D8D8;
+    font-weight: 700;
+  }
+
+  /* ── PROGRESS BAR ── */
+  .progress {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: rgba(255,255,255,0.2);
+    z-index: 100;
+  }
+
+  .progress-bar {
+    height: 100%;
+    background: #C4963A;
+    transition: width 0.1s linear;
+  }
+
+  /* ── SLIDE DOTS ── */
+  .dots {
+    position: fixed;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.5rem;
+    z-index: 100;
+  }
+
+  .dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.4);
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+  .dot.active { background: #fff; width: 20px; border-radius: 3px; }
+
+  /* ── TEXT ANIMATIONS ── */
+  .slide-in-up {
+    animation: slideInUp 0.6s ease both;
+  }
+
+  .slide-in-up.d1 { animation-delay: 0.1s; }
+  .slide-in-up.d2 { animation-delay: 0.3s; }
+  .slide-in-up.d3 { animation-delay: 0.5s; }
+  .slide-in-up.d4 { animation-delay: 0.7s; }
+
+  @keyframes slideInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+  }
+
+  /* ── WATERMARK ── */
+  .watermark {
+    position: fixed;
+    bottom: 3.5rem;
+    right: 1rem;
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.08em;
+    z-index: 100;
+  }
+
+  /* Reset animations when slide becomes active */
+  .slide:not(.active) .slide-in-up {
+    opacity: 0;
+    animation: none;
+  }
+</style>
+</head>
+<body>
+
+<div class="progress"><div class="progress-bar" id="progressBar"></div></div>
+
+<!-- SLIDE 1 — HOOK -->
+<div class="slide active" id="s1">
+  <img src="pino_logo.png" class="pino slide-in-up d1" alt="Pino"/>
+  <div class="big-text slide-in-up d2">
+    When your toddler melts down…
+    <em>do you freeze?</em>
+  </div>
+  <p class="sub slide-in-up d3">Most parents do. Because nobody gave them the words.</p>
+</div>
+
+<!-- SLIDE 2 — PROBLEM -->
+<div class="slide" id="s2">
+  <p class="label slide-in-up d1">Sound familiar?</p>
+  <div class="scene slide-in-up d2">
+    <span class="emoji">😤</span>
+    <p class="scene-text">"I knew I should stay calm.<br/>I just didn't know<br/>what to say."</p>
+    <p class="scene-sub">— every parent, ever</p>
+  </div>
+  <p class="sub slide-in-up d3" style="color:#7A6A52;font-size:1rem;">Big feelings are hard for kids.<br/>And for us too.</p>
+</div>
+
+<!-- SLIDE 3 — SOLUTION -->
+<div class="slide" id="s3">
+  <div class="card-preview slide-in-up d1">
+    <p class="card-tag">For the Parent</p>
+    <p class="card-title">Big Feelings 🐧</p>
+    <p class="script-en">"I see you're having a big feeling. I'm not upset with you. Let's take three slow breaths together."</p>
+    <p class="script-es">Veo que tienes una emoción grande. No estoy molesta contigo. Vamos a respirar juntos.</p>
+  </div>
+  <p class="headline slide-in-up d2">Now you have<br/>the words. 💛</p>
+</div>
+
+<!-- SLIDE 4 — BILINGUAL -->
+<div class="slide" id="s4">
+  <p style="font-size:0.8rem;font-weight:800;letter-spacing:0.15em;color:#3D8080;text-transform:uppercase;margin-bottom:1rem;" class="slide-in-up d1">Every card is bilingual</p>
+  <div class="split slide-in-up d2">
+    <div class="lang-card en">
+      <span class="lang-label">ENGLISH</span>
+      <p class="lang-text">"I'm having a big feeling. I need help."</p>
+    </div>
+    <div class="lang-card es">
+      <span class="lang-label">ESPAÑOL</span>
+      <p class="lang-text">"Tengo una emoción grande. Necesito ayuda."</p>
+    </div>
+  </div>
+  <p class="headline slide-in-up d3">For bilingual families<br/>raising little kids. 🌱</p>
+</div>
+
+<!-- SLIDE 5 — CTA -->
+<div class="slide" id="s5">
+  <img src="pino_logo.png" class="pino slide-in-up d1" alt="Pino"/>
+  <p class="cta-text slide-in-up d2">Get the free<br/>Big Feelings card.</p>
+  <p class="cta-sub slide-in-up d3">No strings. Just the words<br/>you need in the moment.</p>
+  <button class="btn slide-in-up d4">Free card → pinocalmapp.com</button>
+  <p class="url slide-in-up d4">pinocalmapp.com</p>
+</div>
+
+<div class="dots">
+  <div class="dot active" onclick="goTo(0)"></div>
+  <div class="dot" onclick="goTo(1)"></div>
+  <div class="dot" onclick="goTo(2)"></div>
+  <div class="dot" onclick="goTo(3)"></div>
+  <div class="dot" onclick="goTo(4)"></div>
+</div>
+
+<div class="watermark">@pinocalmapp</div>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  const dots = document.querySelectorAll('.dot');
+  const progressBar = document.getElementById('progressBar');
+  let current = 0;
+  let timer;
+  let progress = 0;
+  const SLIDE_DURATION = 4000; // 4 seconds per slide
+  const INTERVAL = 50;
+
+  function goTo(index) {
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = index;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+
+    // Re-trigger animations
+    slides[current].querySelectorAll('.slide-in-up').forEach(el => {
+      el.style.animation = 'none';
+      el.offsetHeight; // reflow
+      el.style.animation = '';
+    });
+
+    progress = 0;
+    clearInterval(timer);
+    startTimer();
+  }
+
+  function startTimer() {
+    timer = setInterval(() => {
+      progress += (INTERVAL / SLIDE_DURATION) * 100;
+      progressBar.style.width = Math.min(progress, 100) + '%';
+      if (progress >= 100) {
+        const next = (current + 1) % slides.length;
+        goTo(next);
+      }
+    }, INTERVAL);
+  }
+
+  // Touch/click to advance
+  document.body.addEventListener('click', (e) => {
+    if (e.target.closest('.dots')) return;
+    const next = (current + 1) % slides.length;
+    goTo(next);
+  });
+
+  startTimer();
+</script>
+</body>
+</html>
