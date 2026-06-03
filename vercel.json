@@ -2,6 +2,8 @@
   "rewrites": [
     { "source": "/collab", "destination": "/collab.html" },
     { "source": "/collab.html", "destination": "/collab.html" },
-    { "source": "/((?!collab).*)", "destination": "/index.html" }
+    { "source": "/tiktok", "destination": "/tiktok.html" },
+    { "source": "/tiktok.html", "destination": "/tiktok.html" },
+    { "source": "/((?!collab|tiktok).*)", "destination": "/index.html" }
   ]
 }
