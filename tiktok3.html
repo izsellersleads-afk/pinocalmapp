@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>PINO Calm TikTok 3</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Playfair+Display:ital,wght@0,900;1,700&display=swap" rel="stylesheet"/>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 390px; height: 844px; overflow: hidden; font-family: 'Nunito', sans-serif; }
+
+  .slide { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.5s ease; padding: 2rem; text-align: center; }
+  .slide.active { opacity: 1; }
+
+  /* S1 — warm cream */
+  #s1 { background: linear-gradient(135deg, #F5EFE4 0%, #E8DDD0 100%); }
+  #s1 .tag { background: #6BAAAA; color: #fff; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; padding: 0.4rem 1rem; border-radius: 100px; display: inline-block; margin-bottom: 1.2rem; }
+  #s1 .hook { font-family: 'Playfair Display', serif; font-size: 2.6rem; font-weight: 900; color: #4A3728; line-height: 1.15; margin-bottom: 1rem; }
+  #s1 .hook em { font-style: italic; color: #6BAAAA; }
+  #s1 .sub { font-size: 1rem; color: #9C8B6E; line-height: 1.5; }
+
+  /* S2 — split comparison */
+  #s2 { background: #4A3728; }
+  #s2 .versus { display: grid; grid-template-columns: 1fr auto 1fr; gap: 0.6rem; align-items: center; width: 100%; max-width: 340px; margin-bottom: 1.5rem; }
+  #s2 .col { border-radius: 16px; padding: 1.2rem; }
+  #s2 .col.before { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); }
+  #s2 .col.after { background: #6BAAAA; }
+  #s2 .col-label { font-size: 0.65rem; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 0.5rem; display: block; }
+  #s2 .col.before .col-label { color: rgba(255,255,255,0.4); }
+  #s2 .col.after .col-label { color: rgba(255,255,255,0.7); }
+  #s2 .col-text { font-size: 0.9rem; font-weight: 700; line-height: 1.4; }
+  #s2 .col.before .col-text { color: rgba(255,255,255,0.6); }
+  #s2 .col.after .col-text { color: #fff; }
+  #s2 .vs { font-size: 1.2rem; font-weight: 900; color: #C4963A; }
+  #s2 .label { font-size: 1rem; font-weight: 800; color: #B8D8D8; }
+
+  /* S3 — card show */
+  #s3 { background: #6BAAAA; }
+  #s3 .cards { display: flex; flex-direction: column; gap: 0.7rem; width: 100%; max-width: 340px; margin-bottom: 1.2rem; }
+  #s3 .card { background: #fff; border-radius: 14px; padding: 1rem 1.2rem; text-align: left; display: flex; align-items: center; gap: 0.8rem; }
+  #s3 .card-num { background: #6BAAAA; color: #fff; font-weight: 900; font-size: 0.8rem; width: 28px; height: 28px; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  #s3 .card-name { font-size: 0.95rem; font-weight: 800; color: #4A3728; }
+  #s3 .card-es { font-size: 0.8rem; color: #9C8B6E; }
+  #s3 .headline { font-size: 1.1rem; font-weight: 900; color: #fff; }
+
+  /* S4 — lyric */
+  #s4 { background: #F5EFE4; }
+  #s4 .lyric-box { background: #fff; border-radius: 24px; padding: 2rem; width: 100%; max-width: 340px; box-shadow: 0 4px 24px rgba(0,0,0,0.08); margin-bottom: 1.2rem; }
+  #s4 .music { font-size: 1.5rem; margin-bottom: 0.8rem; display: block; }
+  #s4 .lyric-en { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.2rem; color: #4A3728; line-height: 1.5; margin-bottom: 0.8rem; }
+  #s4 .lyric-es { font-size: 1rem; color: #7A6A52; line-height: 1.5; }
+  #s4 .song-title { font-size: 0.75rem; font-weight: 800; color: #6BAAAA; letter-spacing: 0.1em; text-transform: uppercase; }
+
+  /* S5 */
+  #s5 { background: #3D8080; }
+  #s5 .pino { width: 120px; margin-bottom: 1rem; animation: float 3s ease-in-out infinite; mix-blend-mode: multiply; }
+  #s5 .cta { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 900; color: #fff; line-height: 1.2; margin-bottom: 0.8rem; }
+  #s5 .languages { display: flex; gap: 0.6rem; justify-content: center; margin-bottom: 1.2rem; }
+  #s5 .lang-tag { background: rgba(255,255,255,0.15); color: #fff; font-weight: 800; font-size: 0.9rem; padding: 0.4rem 1rem; border-radius: 100px; }
+  #s5 .btn { background: #C4963A; color: #fff; font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 1rem; padding: 0.9rem 2rem; border-radius: 100px; border: none; box-shadow: 0 6px 20px rgba(196,150,58,0.4); }
+  #s5 .url { margin-top: 0.7rem; font-size: 0.85rem; color: rgba(255,255,255,0.7); font-weight: 700; }
+
+  .progress { position: fixed; top: 0; left: 0; right: 0; height: 3px; background: rgba(0,0,0,0.1); z-index: 100; }
+  .progress-bar { height: 100%; background: #C4963A; transition: width 0.1s linear; }
+  .dots { position: fixed; bottom: 1.5rem; left: 50%; transform: translateX(-50%); display: flex; gap: 0.5rem; z-index: 100; }
+  .dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.5); transition: all 0.3s; cursor: pointer; }
+  .dot.active { background: #fff; width: 20px; border-radius: 3px; }
+  .watermark { position: fixed; bottom: 3.5rem; right: 1rem; font-size: 0.75rem; font-weight: 800; color: rgba(255,255,255,0.4); letter-spacing: 0.08em; z-index: 100; }
+
+  .up { animation: up 0.6s ease both; }
+  .up.d1 { animation-delay: 0.1s; } .up.d2 { animation-delay: 0.3s; }
+  .up.d3 { animation-delay: 0.5s; } .up.d4 { animation-delay: 0.7s; }
+  @keyframes up { from { opacity:0; transform:translateY(28px); } to { opacity:1; transform:translateY(0); } }
+  @keyframes float { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-12px); } }
+  .slide:not(.active) .up { opacity:0; animation:none; }
+</style>
+</head>
+<body>
+<div class="progress"><div class="progress-bar" id="pb"></div></div>
+
+<!-- S1 -->
+<div class="slide active" id="s1">
+  <span class="tag up d1">For bilingual families 🐧</span>
+  <div class="hook up d2">Raising bilingual kids is <em>beautiful.</em><br/>And also chaotic. 😂</div>
+  <p class="sub up d3">Especially when big feelings hit and you can't find the words — in either language.</p>
+</div>
+
+<!-- S2 -->
+<div class="slide" id="s2">
+  <div class="versus up d2">
+    <div class="col before">
+      <span class="col-label">Before</span>
+      <p class="col-text">"Stop crying!" "Cálmate!" "I don't know what to do!"</p>
+    </div>
+    <div class="vs">→</div>
+    <div class="col after">
+      <span class="col-label">With PINO</span>
+      <p class="col-text">"I see you. I'm here. Let's breathe together."</p>
+    </div>
+  </div>
+  <p class="label up d3">Same moment. Different words. 💛</p>
+</div>
+
+<!-- S3 -->
+<div class="slide" id="s3">
+  <div class="cards up d2">
+    <div class="card"><div class="card-num">1</div><div><div class="card-name">Big Feelings</div><div class="card-es">Grandes emociones</div></div></div>
+    <div class="card"><div class="card-num">2</div><div><div class="card-name">Name the Feeling</div><div class="card-es">Nombra la emoción</div></div></div>
+    <div class="card"><div class="card-num">3</div><div><div class="card-name">Safe Body</div><div class="card-es">Cuerpo seguro</div></div></div>
+    <div class="card"><div class="card-num">4</div><div><div class="card-name">Calm Corner</div><div class="card-es">Rincón de calma</div></div></div>
+    <div class="card"><div class="card-num">5</div><div><div class="card-name">After the Storm</div><div class="card-es">Después de la tormenta</div></div></div>
+  </div>
+  <p class="headline up d3">5 bilingual calm cards 🐧</p>
+</div>
+
+<!-- S4 — Song lyric -->
+<div class="slide" id="s4">
+  <div class="lyric-box up d2">
+    <span class="music">🎵</span>
+    <p class="lyric-en">"Big feelings come,<br/>big feelings go.<br/>I breathe in slow,<br/>I breathe out slow."</p>
+    <p class="lyric-es">Emociones vienen,<br/>emociones van.<br/>Respiro despacio,<br/>y calma vendrá.</p>
+  </div>
+  <p class="song-title up d3">Every card comes with a bilingual song 🎵</p>
+</div>
+
+<!-- S5 -->
+<div class="slide" id="s5">
+  <img src="pino_logo.png" class="pino up d1" alt="Pino"/>
+  <div class="cta up d2">Free bilingual<br/>calm card. 🐧</div>
+  <div class="languages up d3">
+    <span class="lang-tag">🇺🇸 English</span>
+    <span class="lang-tag">🇲🇽 Español</span>
+  </div>
+  <button class="btn up d4">Grab it free → link in bio</button>
+  <div class="url">pinocalmapp.com</div>
+</div>
+
+<div class="dots">
+  <div class="dot active" onclick="goTo(0)"></div>
+  <div class="dot" onclick="goTo(1)"></div>
+  <div class="dot" onclick="goTo(2)"></div>
+  <div class="dot" onclick="goTo(3)"></div>
+  <div class="dot" onclick="goTo(4)"></div>
+</div>
+<div class="watermark">@pinocalmapp</div>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  const dots = document.querySelectorAll('.dot');
+  const pb = document.getElementById('pb');
+  let cur = 0, timer, prog = 0;
+  const DUR = 4000, INT = 50;
+  function goTo(i) {
+    slides[cur].classList.remove('active'); dots[cur].classList.remove('active');
+    cur = i; slides[cur].classList.add('active'); dots[cur].classList.add('active');
+    slides[cur].querySelectorAll('.up').forEach(el => { el.style.animation='none'; el.offsetHeight; el.style.animation=''; });
+    prog = 0; clearInterval(timer); startTimer();
+  }
+  function startTimer() {
+    timer = setInterval(() => {
+      prog += (INT/DUR)*100; pb.style.width = Math.min(prog,100)+'%';
+      if (prog >= 100) goTo((cur+1)%slides.length);
+    }, INT);
+  }
+  document.body.addEventListener('click', e => { if(!e.target.closest('.dots')) goTo((cur+1)%slides.length); });
+  startTimer();
+</script>
+</body>
+</html>
