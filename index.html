@@ -336,6 +336,86 @@
       letter-spacing: 0.06em;
     }
 
+    /* ── SONGS SECTION ── */
+    .songs {
+      background: var(--cream-dark);
+      text-align: center;
+    }
+
+    .songs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2.5rem;
+    }
+
+    .song-card {
+      background: var(--white);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      transition: transform 0.18s;
+    }
+    .song-card:hover { transform: translateY(-4px); }
+
+    .song-video {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+    }
+    .song-video iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: none;
+    }
+
+    .song-info {
+      padding: 1.2rem 1.4rem 1.5rem;
+      text-align: left;
+    }
+
+    .song-info h3 {
+      font-weight: 900;
+      font-size: 1rem;
+      color: var(--brown-dark);
+      margin-bottom: 0.25rem;
+    }
+
+    .song-info p {
+      font-size: 0.85rem;
+      color: var(--brown);
+      line-height: 1.5;
+      margin-bottom: 0.8rem;
+    }
+
+    .song-tag {
+      display: inline-block;
+      background: var(--teal-light);
+      color: var(--teal-dark);
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.7rem;
+      border-radius: 100px;
+      margin-right: 0.4rem;
+    }
+
+    .songs-yt-link {
+      display: inline-block;
+      margin-top: 2rem;
+      color: var(--teal-dark);
+      font-weight: 800;
+      font-size: 0.95rem;
+      text-decoration: none;
+      border-bottom: 2px solid var(--teal);
+      padding-bottom: 2px;
+      transition: color 0.15s;
+    }
+    .songs-yt-link:hover { color: var(--brown-dark); }
+
     /* ── BUY SECTION ── */
     .buy {
       background: var(--cream);
@@ -542,6 +622,7 @@
     @media (max-width: 480px) {
       .cards-grid { grid-template-columns: 1fr; }
       .buy-box { padding: 1.8rem 1.2rem; }
+      .songs-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -672,6 +753,40 @@
   <cite>— PINO CALM</cite>
 </section>
 
+<!-- SONGS -->
+<section class="songs" id="songs">
+  <div class="container-wide reveal">
+    <p class="section-label">🎵 Pino &amp; Friends</p>
+    <h2>Bilingual songs little kids<br/>actually want to sing.</h2>
+    <p style="font-family:'Lora',serif;font-style:italic;color:var(--brown);max-width:500px;margin:0 auto;line-height:1.6;">Learning through music — in English and Spanish. Perfect for home, the car, or circle time.</p>
+    <div class="songs-grid">
+      <div class="song-card reveal">
+        <div class="song-video">
+          <iframe src="https://www.youtube.com/embed/tggni4EskKQ" title="Ocean Friends / Amigos del Mar" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="song-info">
+          <h3>Ocean Friends / Amigos del Mar</h3>
+          <p>Meet Pino and friends under the sea! A gentle bilingual song about ocean animals and friendship.</p>
+          <span class="song-tag">EN + ES</span>
+          <span class="song-tag">Ages 2–7</span>
+        </div>
+      </div>
+      <div class="song-card reveal">
+        <div class="song-video">
+          <iframe src="https://www.youtube.com/embed/WSnSS7U8EG4" title="Heroes in My Town / Héroes en mi ciudad" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="song-info">
+          <h3>Heroes in My Town / Héroes en mi ciudad</h3>
+          <p>Celebrate community helpers — firefighters, doctors, teachers and more! Clap, move, and sing along.</p>
+          <span class="song-tag">EN + ES</span>
+          <span class="song-tag">Ages 2–7</span>
+        </div>
+      </div>
+    </div>
+    <a href="https://www.youtube.com/@ITSounds" target="_blank" class="songs-yt-link">🎬 See all songs on YouTube →</a>
+  </div>
+</section>
+
 <!-- BUY -->
 <section class="buy" id="buy">
   <div class="container reveal">
@@ -740,8 +855,6 @@
     });
   }, { threshold: 0.12 });
   reveals.forEach(r => observer.observe(r));
-
-
 </script>
 </body>
 </html>
