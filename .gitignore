@@ -1,0 +1,27 @@
+# Never commit credentials or private files (PINO Calm security rule)
+*recovery*
+*RECOVERY*
+*api key*
+*api_key*
+*apikey*
+*secret*
+*password*
+*token*
+*credential*
+.env
+.env.*
+*.pem
+*.key
+.vercel/
+# Local working files
+*.MOV
+*.mov
+*.mp4
+*.MP4
+*.wav
+*.zip
+*.xlsx
+*.pdf
+Thumbs.db
+desktop.ini
+.DS_Store
