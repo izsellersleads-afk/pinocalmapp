@@ -682,6 +682,72 @@
     .faq-item summary { cursor: pointer; font-weight: 800; color: var(--brown-dark); padding: 0.9rem 0; list-style-position: outside; }
     .faq-item p { font-family: 'Lora', serif; color: var(--brown); line-height: 1.7; padding: 0 0 1rem; }
 
+    /* ── SUPPORT PINO ── */
+    .support {
+      background: linear-gradient(180deg, var(--cream) 0%, var(--cream-dark) 100%);
+      text-align: center;
+    }
+    .support-mascot {
+      width: 150px; height: 150px; margin: 0 auto 1.4rem;
+      border-radius: 50%; overflow: hidden;
+      background: var(--white);
+      box-shadow: 0 6px 24px rgba(74,55,40,0.12);
+    }
+    .support-mascot img {
+      display: block; width: 195.9%; max-width: none; height: auto;
+      margin: -21.1% 0 0 -46.9%;
+    }
+    .support-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
+      margin-top: 1.6rem; text-align: left;
+    }
+    .support-card {
+      background: var(--white); border-radius: 20px;
+      padding: 2rem 1.8rem; display: flex; flex-direction: column;
+      box-shadow: 0 4px 20px rgba(74,55,40,0.07);
+    }
+    .support-card .support-lang {
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.68rem; font-weight: 800; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--olive); margin-bottom: 0.6rem;
+    }
+    .support-card h2 { font-size: clamp(1.4rem, 3.6vw, 1.8rem); }
+    .support-card p {
+      font-family: 'Lora', serif; font-size: 0.98rem; color: var(--brown);
+      line-height: 1.7; margin-bottom: 0.9rem;
+    }
+    .support-card .support-thanks {
+      font-style: italic; color: var(--teal-dark); margin: 1rem 0 0;
+    }
+    .btn-support {
+      display: inline-flex; align-items: center; justify-content: center; gap: 0.55rem;
+      align-self: flex-start; margin-top: auto;
+      background: var(--teal-dark); color: #fff;
+      font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 1rem;
+      padding: 0.85rem 2rem; border-radius: 100px; text-decoration: none;
+      box-shadow: 0 4px 20px rgba(61,128,128,0.3);
+      transition: transform 0.18s, box-shadow 0.18s;
+    }
+    .btn-support svg { width: 1.1em; height: 1.1em; flex: none; }
+    .btn-support[href]:hover, .btn-support[href]:focus-visible {
+      transform: translateY(-2px); box-shadow: 0 8px 28px rgba(61,128,128,0.4);
+    }
+    .btn-support.is-pending { opacity: 0.6; cursor: not-allowed; box-shadow: none; }
+    .support-card .support-pending {
+      font-family: 'Nunito', sans-serif; line-height: 1.4;
+      font-size: 0.8rem; font-weight: 700; color: var(--olive); margin-top: 0.6rem;
+    }
+    .support-notice {
+      max-width: 620px; margin: 1.8rem auto 0;
+      font-size: 0.8rem; line-height: 1.6; color: var(--brown);
+    }
+    .support-notice span { display: block; }
+    @media (max-width: 720px) {
+      .support-grid { grid-template-columns: 1fr; }
+      .support-card { padding: 1.7rem 1.3rem; }
+      .btn-support { align-self: stretch; }
+    }
+
     /* ── MOBILE ── */
     @media (max-width: 480px) {
       .cards-grid { grid-template-columns: 1fr; }
@@ -824,6 +890,7 @@
     <li><a href="#plush">Meet PINO</a></li>
     <li><a href="#vision">Our Vision</a></li>
     <li><a href="#free">Free</a></li>
+    <li><a href="#support">Support PINO · <span lang="es">Apoya a PINO</span></a></li>
   </ul>
 </nav>
 
@@ -1180,6 +1247,46 @@
   </div>
 </section>
 
+<!-- SUPPORT PINO -->
+<section class="support" id="support" aria-labelledby="support-title-en">
+  <div class="container-wide reveal">
+    <div class="support-mascot">
+      <img src="/pino_logo.png" alt="PINO the penguin holding a heart" width="1254" height="1254" loading="lazy"/>
+    </div>
+    <p class="section-label">Support PINO · <span lang="es">Apoya a PINO</span></p>
+    <div class="support-grid">
+      <div class="support-card" lang="en">
+        <p class="support-lang">English</p>
+        <h2 id="support-title-en">Help Little Hearts Grow</h2>
+        <p>Help PINO bring bilingual emotional learning resources to children, families and educators around the world.</p>
+        <p>Your support helps us develop new calming activities, educational resources, stories, music and tools that help little hearts navigate big feelings.</p>
+        <a class="btn-support is-pending" data-support-link aria-disabled="true">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          Support PINO
+        </a>
+        <p class="support-pending" data-support-pending>Online contributions are not open yet.</p>
+        <p class="support-thanks">Thank you for believing in our mission.</p>
+      </div>
+      <div class="support-card" lang="es">
+        <p class="support-lang">Español</p>
+        <h2>Ayuda a crecer a los pequeños corazones</h2>
+        <p>Ayuda a PINO a llevar recursos bilingües de aprendizaje emocional a niños, familias y educadores de todo el mundo.</p>
+        <p>Tu apoyo nos ayuda a desarrollar nuevas actividades de calma, recursos educativos, cuentos, música y herramientas para que los pequeños corazones aprendan a gestionar sus grandes emociones.</p>
+        <a class="btn-support is-pending" data-support-link aria-disabled="true">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          Apoya a PINO
+        </a>
+        <p class="support-pending" data-support-pending>Las contribuciones en línea aún no están disponibles.</p>
+        <p class="support-thanks">Gracias por creer en nuestra misión.</p>
+      </div>
+    </div>
+    <p class="support-notice">
+      <span>Contributions are completely voluntary and are not tax-deductible charitable donations.</span>
+      <span lang="es">Las contribuciones son totalmente voluntarias y no son donaciones benéficas deducibles de impuestos.</span>
+    </p>
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer>
   <p style="margin-bottom:0.5rem;">
@@ -1207,6 +1314,20 @@
     });
   }, { threshold: 0.12 });
   reveals.forEach(r => observer.observe(r));
+
+  // Support PINO: external hosted checkout. Leave empty until the payment
+  // account owner activates it; then paste the full https:// checkout link.
+  const SUPPORT_CHECKOUT_URL = '';
+  if (/^https:\/\//.test(SUPPORT_CHECKOUT_URL)) {
+    document.querySelectorAll('[data-support-link]').forEach(a => {
+      a.href = SUPPORT_CHECKOUT_URL;
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+      a.removeAttribute('aria-disabled');
+      a.classList.remove('is-pending');
+    });
+    document.querySelectorAll('[data-support-pending]').forEach(p => p.remove());
+  }
 </script>
 </body>
 </html>
