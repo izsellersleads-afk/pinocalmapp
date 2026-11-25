@@ -1317,7 +1317,7 @@
 
   // Support PINO: external hosted checkout. Leave empty until the payment
   // account owner activates it; then paste the full https:// checkout link.
-  const SUPPORT_CHECKOUT_URL = '';
+  const SUPPORT_CHECKOUT_URL = 'https://www.paypal.com/ncp/payment/JB7MJB5CDR3AJ';
   if (/^https:\/\//.test(SUPPORT_CHECKOUT_URL)) {
     document.querySelectorAll('[data-support-link]').forEach(a => {
       a.href = SUPPORT_CHECKOUT_URL;
